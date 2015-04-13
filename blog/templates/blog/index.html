@@ -1,0 +1,21 @@
+{% extends "blog/layout.html" %}
+
+{% block content %}
+<style>
+background-color: #f00;
+</style>
+    blog/index.html
+
+    {% for post in posts %}
+        {% ifchanged %}
+            <h2>{{ post.created_at|date:"F" }}</h2>
+        {% endifchanged %}
+        <div>
+            <h4>{{ post.id }} {{ post.title }}</h4>
+            <a href="{% url "blog:detail" post.id %}">{{ post.content|truncatechars:100 }}</a>
+        </div>
+    {% endfor %}
+
+    <hr/>
+    <a href="{% url "blog:new" %}">새 글</a>
+{% endblock %}

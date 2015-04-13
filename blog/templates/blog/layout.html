@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8" />
+<title>blog</title>
+<style>
+body {
+    background-color: #E0FF42;
+}
+</style>
+<script>
+function hello() {
+    alert("world");
+    var sum =0;
+    for(var i=0; i<100; i++){
+sum += i;
+    }
+}
+</script>
+</head>
+<body>
+{{ request }}
+<h1>blog</h1>
+{% block content %}
+{% endblock %}
+</body>
+</html>
